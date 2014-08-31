@@ -2,22 +2,22 @@
     position: fixed;
     bottom: 0px;
     width: 100%;
-    background: white;
     z-index: 999999;
     text-align: center;
-    border-top: 1px solid black;
 }
 
 .close-overlay {
-    border-radius: 4px;
+    border-radius: 8px;
     border: solid 1px black;
     float: right;
     margin-right: 50px;
     margin-top: -13px;
-    background-color: white;
+    background-color: #c00;
     padding: 0 3px 0 3px;
+    color: white;
 }
 
 .close-overlay:hover {
-    background-color: #DDDDDD;
+    background-color: #f60;
+    color: white;
 }

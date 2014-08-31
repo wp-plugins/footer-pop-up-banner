@@ -16,13 +16,27 @@
             </td>
          </tr>
          <tr valign="top">
-            <th scope="row"><label for="fpub_image">Immage (URL)</label></th>
+            <th scope="row"><label for="fpub_image">Image (URL)</label></th>
             <td><input type="text" name="fpub_image" id="setting_a" value="<?php echo get_option('fpub_image'); ?>" /></td>
          </tr>
          <tr valign="top">
             <th scope="row"><label for="fpub_link">Redirect (URL)</label></th>
             <td><input type="text" name="fpub_link" id="fpub_link" value="<?php echo get_option('fpub_link'); ?>" /></td>
          </tr>
+
+         <tr valign="top">
+            <th scope="row"><label for="setting_a">Colors</label></th>
+            <td>
+               <input type="text" class="my-color-picker" id="fpub_background_colr" name="fpub_background_colr" value="<?php echo get_option('fpub_background_colr'); ?>" />
+               <label for="fpub_background_colr">Background color</label>
+               <input type="number" step="1" min="0" max="100" class="small-text" name="fpub_background_fade" id="fpub_background_fade" value="<?php echo get_option('fpub_background_fade'); ?>" />
+               <label for="fpub_background_fade">(%) Fade</label>
+               <br />
+               <input type="text" class="my-color-picker" id="fpub_line_color" name="fpub_line_color" value="<?php echo get_option('fpub_line_color'); ?>" />
+               <label for="fpub_line_color">Line color</label>
+            </td>
+         </tr>
+
          <tr valign="top">
             <th scope="row"><label for="setting_a">Options</label></th>
             <td>
