@@ -11,6 +11,6 @@
    <?php endif; ?>
    
    <a href="<?= get_option('fpub_link'); ?>">
-      <img src="<?= get_option('fpub_image'); ?>" height="<?= get_option('fpub_height'); ?>" width="<?= get_option('fpub_width'); ?>" />
+      <img src="<?= get_option('fpub_image'); ?>" height="<?= get_option('fpub_height') > 0 ? get_option('fpub_height') . 'px' : ''; ?>" width="<?= get_option('fpub_width') > 0 ? get_option('fpub_width') . 'px' : ''; ?>" />
    </a>
 </div>
