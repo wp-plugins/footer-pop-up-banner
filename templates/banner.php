@@ -1,7 +1,7 @@
 <script language="javascript">
 
-   var fpub_delay = <?= get_option('fpub_delay'); ?>;
-   var fpub_persist = <?= get_option('fpub_persist'); ?>;
+   var fpub_delay = <?= is_numeric(get_option('fpub_delay')) ? get_option('fpub_delay') : 0; ?>;
+   var fpub_persist = <?= is_numeric(get_option('fpub_persist')) ? get_option('fpub_persist') : 0; ?>;
 
 </script>
 

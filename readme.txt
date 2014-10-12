@@ -4,7 +4,7 @@ Donate link: https://ninjapress.net/
 Tags: footer banner, footer pop-up, pop-up banner
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ Look at the frequently ask questions here and contact us for any information;
 1. Admin view
 
 == Changelog ==
+
+= 1.4 =
+Fixed a serious problem when the Time of entry field was left blank
 
 = 1.3 =
 Plugin works also on the theme wothout "hide" style

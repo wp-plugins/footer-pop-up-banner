@@ -17,3 +17,7 @@ function open_banner() {
         }
     }
 }
+
+function close_banner() {
+    jQuery('#fpub-popup').hide('slow');
+}
