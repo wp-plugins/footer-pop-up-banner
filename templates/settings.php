@@ -46,6 +46,9 @@
                <input type="number" step="1" min="1" class="small-text" name="fpub_height" id="fpub_height" value="<?php echo get_option('fpub_height'); ?>" />
                <label for="fpub_height">(pixel) Height</label>
                <br />
+               <input type="number" step="1" min="1" class="small-text" name="fpub_border_height" id="fpub_height" value="<?php echo get_option('fpub_border_height'); ?>" />
+               <label for="fpub_height">(pixel) Border height</label>
+               <br />
                <input type="checkbox" name="fpub_btn_close" id="fpub_btn_close" <?= get_option('fpub_btn_close') == 'on' ? 'checked' : ''; ?> />
                <label for="fpub_btn_close">Show the button to close the banner</label>
             </td>
@@ -54,4 +57,8 @@
 
       <?php @submit_button(); ?>
    </form>
+   
+   <a href="http://www.ninjapress.net/suite/" target="_blank">
+      <img style="float:right" src="<?= plugins_url('images/ninjapress-logo.png', dirname(__FILE__)); ?>" />
+   </a>
 </div>
