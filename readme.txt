@@ -1,10 +1,10 @@
 === Footer Pop-Up Banner ===
 Contributors: ninjapress, wowdinamica, stefanobutto
-Donate link: https://ninjapress.net/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LNY8C3ESXK5MG
 Tags: footer banner, footer pop-up, pop-up banner
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.5
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,8 +45,18 @@ Look at the frequently ask questions here and contact us for any information;
 == Screenshots ==
 
 1. Admin view
+2. Ad image
+3. Link to redirect
+4. User view
 
 == Changelog ==
+
+= 1.7=
+Adding the dialog box to insert an image directly from the media
+Added the list of pages in the blog to do the redirect
+
+= 1.6 =
+The border can be set to 0
 
 = 1.5 =
 Added option to set the line height of the popup

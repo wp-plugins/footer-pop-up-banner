@@ -4,7 +4,7 @@
   Plugin Name: Footer Pop-up Banner
   Plugin URI: http://www.ninjapress.net/footer-pop-up-banner/
   Description: Publish powerfull ads on the footer of your pages
-  Version: 1.5
+  Version: 1.7
   Author: Ninja Press
   Author URI: http://www.ninjapress.net
   License: GPL2
@@ -22,6 +22,7 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          // register actions
          add_action('admin_menu', array(&$this, 'add_menu'));
          add_action('admin_init', array(&$this, 'admin_init'));
+         add_action('admin_enqueue_scripts', array(&$this, 'enqueue_admin_js'));
       }
 
       /**
@@ -56,7 +57,12 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          register_setting('wp_footer_pop_up_banner', 'fpub_line_color');
          register_setting('wp_footer_pop_up_banner', 'fpub_border_height');
 
-         // Possibly do additional admin_init tasks
+         global $pagenow;
+         if ('media-upload.php' == $pagenow || 'async-upload.php' == $pagenow) {
+            // Now we will replace the 'Insert into Post Button inside Thickbox'
+            add_filter('gettext', array($this, 'replace_window_text'), 1, 2);
+            // gettext filter and every sentence.
+         }
       }
 
       /**
@@ -72,10 +78,26 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          }
 
          wp_enqueue_style('wp-color-picker');
-         wp_enqueue_script('', plugins_url('js/admin.js', __FILE__), array('jquery', 'jquery-ui-core', 'wp-color-picker'), time(), true);
          
          // Render the settings template
          include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
+      }
+      
+      public function enqueue_admin_js() {
+         wp_enqueue_script('media-upload'); //Provides all the functions needed to upload, validate and give format to files.
+         wp_enqueue_script('thickbox'); //Responsible for managing the modal window.
+         wp_enqueue_style('thickbox'); //Provides the styles needed for this window.
+         wp_enqueue_script('script', plugins_url('js/admin.js', __FILE__), array('jquery', 'jquery-ui-core', 'wp-color-picker'), time(), true); //It will initialize the parameters needed to show the window properly.
+      }
+      
+      function replace_window_text($translated_text, $text) {
+         if ('Insert into Post' == $text) {
+            $referer = strpos(wp_get_referer(), 'media_page');
+            if ($referer != '') {
+               return __('Upload Image', 'ink');
+            }
+         }
+         return $translated_text;
       }
 
    }
