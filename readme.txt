@@ -47,7 +47,8 @@ Look at the frequently ask questions here and contact us for any information;
 1. Admin view
 2. Add image from your computer, from url or from wordpress library
 3. Redirect to an url or a page
-4. User view
+4. Options
+5. User view
 
 == Changelog ==
 
