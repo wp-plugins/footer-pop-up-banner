@@ -24,7 +24,6 @@
 
                         <?php $image = get_option('fpub_image', NULL); ?>
                         <?php if ($image) : ?>
-                           ?>
                            <img src="<?php echo get_option('fpub_image');; ?>">
                            <input type="button" name="fpub_remove_image" value="Remove Image" class="button-secondary" id="fpub_remove_image"/>
                         <?php endif; ?>
@@ -67,6 +66,9 @@
                <br />
                <input type="checkbox" name="fpub_btn_close" id="fpub_btn_close" <?= get_option('fpub_btn_close') == 'on' ? 'checked' : ''; ?> />
                <label for="fpub_btn_close">Show the button to close the banner</label>
+               <br />
+               <input type="checkbox" name="fpub_blank" id="fpub_blank" <?= get_option('fpub_blank') == 'on' ? 'checked' : ''; ?> />
+               <label for="fpub_btn_close">Open in another window</label>
             </td>
          </tr>
       </table>

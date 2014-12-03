@@ -10,7 +10,7 @@
       <img src="<?= plugins_url('images/close.png', dirname(__FILE__)); ?>" class="close-overlay" />
    <?php endif; ?>
    
-   <a href="<?= get_option('fpub_link'); ?>">
+      <a href="<?= get_option('fpub_link'); ?>" <?= get_option('fpub_blank') == 'on' ? 'target="_blank"' : '' ?> >
       <img src="<?= get_option('fpub_image'); ?>" height="<?= get_option('fpub_height') > 0 ? get_option('fpub_height') . 'px' : ''; ?>" width="<?= get_option('fpub_width') > 0 ? get_option('fpub_width') . 'px' : ''; ?>" />
    </a>
 </div>
