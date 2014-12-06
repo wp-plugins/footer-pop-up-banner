@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: footer banner, footer pop-up, pop-up banner
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ Look at the frequently ask questions here and contact us for any information;
 5. User view
 
 == Changelog ==
+
+= 1.9 =
+Fixed a stability issue
 
 = 1.8 =
 Added the option to open the page in another tab

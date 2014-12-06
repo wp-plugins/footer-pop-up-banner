@@ -1,5 +1,19 @@
 <div class="wrap">
    <h2>Footer Pop-Up Banner</h2>
+   
+   <div class="postbox">
+       <p> 
+           &nbsp; Watch other 
+           <a style="background-color: yellow" target="_blank" href="http://www.ninjapress.net/">
+               free plugins
+           </a> 
+           of our suite. Read the 
+           <a style="background-color: yellow" target="_blank" href="http://www.ninjapress.net/footer-pop-up-banner/faq/">
+               F.A.Q.
+           </a> 
+           for questions.
+       </p>
+   </div> 
    <form method="post" action="options.php"> 
       <?php settings_fields('wp_footer_pop_up_banner'); ?>
       <?php @do_settings_fields('wp_footer_pop_up_banner'); ?>

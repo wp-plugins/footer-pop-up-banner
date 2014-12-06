@@ -29,6 +29,9 @@ $j(document).ready(function () {
     });
 // window.send_to_editor(html) is how WP would normally handle the received data. It will deliver image data in HTML format, so you can put them wherever you want.
 
+
+
+
     window.send_to_editor = function (html) {
         var image_url = $j('img', html).attr('src');
         $j('#image_path').val(image_url);
