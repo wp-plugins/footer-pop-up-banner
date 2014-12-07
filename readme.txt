@@ -58,7 +58,7 @@ Fixed a stability issue
 = 1.8 =
 Added the option to open the page in another tab
 
-= 1.7=
+= 1.7 =
 Adding the dialog box to insert an image directly from the media
 Added the list of pages in the blog to do the redirect
 
