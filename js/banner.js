@@ -1,12 +1,12 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     jQuery('#fpub-popup').hide();
-    
+
     setTimeout('open_banner()', fpub_delay * 1000);
 
-    jQuery('.close-overlay').click(function() {
-        jQuery('#fpub-popup').hide('slow');
+    jQuery('.close-overlay').click(function () {
+        close_banner();
     });
-}); 
+});
 
 function open_banner() {
     jQuery('#fpub-popup').show('slow');
@@ -20,4 +20,18 @@ function open_banner() {
 
 function close_banner() {
     jQuery('#fpub-popup').hide('slow');
+    
+    SetCookie('wordpress_fpb_close', 1, 1);
+}
+
+function SetCookie(cookieName, cookieValue, nDays) {
+    var today = new Date();
+    var expire = new Date();
+    if (nDays === null || nDays === 0) {
+        nDays = 1;
+    }
+    
+    expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+    document.cookie = cookieName + "=" + escape(cookieValue)
+            + ";expires=" + expire.toGMTString();
 }

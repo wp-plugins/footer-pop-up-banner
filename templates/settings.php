@@ -4,16 +4,17 @@
    <div class="postbox">
        <p> 
            &nbsp; Watch other 
-           <a style="background-color: yellow" target="_blank" href="http://www.ninjapress.net/">
+           <a  target="_blank" href="http://www.ninjapress.net/">
                free plugins
            </a> 
            of our suite. Read the 
-           <a style="background-color: yellow" target="_blank" href="http://www.ninjapress.net/footer-pop-up-banner/faq/">
+           <a  target="_blank" href="http://www.ninjapress.net/footer-pop-up-banner/faq/">
                F.A.Q.
            </a> 
            for questions.
        </p>
    </div> 
+   
    <form method="post" action="options.php"> 
       <?php settings_fields('wp_footer_pop_up_banner'); ?>
       <?php @do_settings_fields('wp_footer_pop_up_banner'); ?>
@@ -67,7 +68,7 @@
          </tr>
 
          <tr valign="top">
-            <th scope="row"><label for="setting_a">Options</label></th>
+            <th scope="row"><label for="setting_a">Dimensions</label></th>
             <td>
                <input type="number" step="1" min="1" class="small-text" name="fpub_width" id="fpub_width" value="<?php echo get_option('fpub_width'); ?>" />
                <label for="fpub_width">(pixel) Width</label>
@@ -78,11 +79,23 @@
                <input type="number" step="1" min="0" class="small-text" name="fpub_border_height" id="fpub_border_height" value="<?php echo get_option('fpub_border_height'); ?>" />
                <label for="fpub_border_height">(pixel) Border height</label>
                <br />
+               </td>
+         </tr>
+         
+         <tr valign="top">
+            <th scope="row"><label for="setting_a">Options</label></th>
+            <td>
                <input type="checkbox" name="fpub_btn_close" id="fpub_btn_close" <?= get_option('fpub_btn_close') == 'on' ? 'checked' : ''; ?> />
                <label for="fpub_btn_close">Show the button to close the banner</label>
                <br />
+               <input type="checkbox" name="fpub_24" id="fpub_blank" <?= get_option('fpub_24') == 'on' ? 'checked' : ''; ?> />
+               <label for="fpub_btn_close">When the user closes the banner will not open for 24 hours</label>
+               <br />
+               <input type="checkbox" name="fpub_home" id="fpub_blank" <?= get_option('fpub_home') == 'on' ? 'checked' : ''; ?> />
+               <label for="fpub_btn_close">Show the banner only on the home page</label>
+               <br />
                <input type="checkbox" name="fpub_blank" id="fpub_blank" <?= get_option('fpub_blank') == 'on' ? 'checked' : ''; ?> />
-               <label for="fpub_btn_close">Open in another window</label>
+               <label for="fpub_btn_close">Open link in another window</label>
             </td>
          </tr>
       </table>

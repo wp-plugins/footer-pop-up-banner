@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: footer banner, footer pop-up, pop-up banner
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.9
+Stable tag: 1.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,10 +47,17 @@ Look at the frequently ask questions here and contact us for any information;
 1. Admin view
 2. Add image from your computer, from url or from wordpress library
 3. Redirect to an url or a page
-4. Options
+4. Dimensions
+5. Options
 5. User view
 
 == Changelog ==
+
+= 1.10 =
+Added option to put the pop up only on the home page
+Added option to set a cookie to the closure and do not reopen for 24 hours
+Support for the new window media management
+Fixed minor bugs
 
 = 1.9 =
 Fixed a stability issue
