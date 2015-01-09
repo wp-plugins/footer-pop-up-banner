@@ -1,98 +1,62 @@
-=== Footer Pop-Up Banner ===
-Contributors: ninjapress, wowdinamica, stefanobutto
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LNY8C3ESXK5MG
-Tags: footer banner, footer pop-up, pop-up banner
-Requires at least: 3.2
-Tested up to: 3.6
-Stable tag: 1.10
+=== Konora Form ===
+Tags: konora, newsletter, autoresponder
+Requires at least: 3.4
+Tested up to: 3.9.1
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Publish powerfull  ads on the footer of your pages
+Invia newsletter e autorisponditori con Konora.com
 
 == Description ==
 
-Publish your speicific events and products using a new business tool. In each wordpress page you can add a particular banner fixed on the bottom of the page. This banner is harmlesss, delicate, do not bother. It’s a powerful weapon for your promotion. You can decide the time of the exposure, when it appears and disappears.
-
-Major features included:
-
-* personalize the time exposure of the banner;
-* personalize when to clear the banner;
-* add an image from your computer;
-* personalize the text;
-* choose the colors of background, borders and text;
-* very simple to use;
-* it’s perfect for beginners and pratictioners;
-
-Languages: also available in english;
-
+Questo plug-in ti permette di inviare newsletter e autorisponditori interfacciando il 
+tuo blog con i servizzi messi a disposizione dal portale [Konora]: www.konora.com
 
 == Installation ==
 
-* Upload the files on the plugins section of your Wordpress;
-* Activate the plugin through the 'Plugins' menu in WordPress;
-* You can change the options clicking on the left sidebar of Wordpress;
-* Create a new page/post and watch the option at the end of the page.
-
-== Frequently Asked Questions ==
-
-Look at the frequently ask questions here and contact us for any information;
-
-* [FAQ](http://www.ninjapress.net/footer-pop-up-banner/faq/) 
-* [Contact us](http://www.ninjapress.net/contacts/) 
+1. Decomprimi il pacchetto contenente il plugin della giusta directory di WordPress
+2. Attiva il plugin dal menu 'Plugins' in WordPress
+3. Apri la pagina 'Opzioni Konora' dal menu 'Impostazioni'
 
 
 == Screenshots ==
 
-1. Admin view
-2. Add image from your computer, from url or from wordpress library
-3. Redirect to an url or a page
-4. Dimensions
-5. Options
-5. User view
+1. Page of advertising
 
 == Changelog ==
 
-= 1.10 =
-Added option to put the pop up only on the home page
-Added option to set a cookie to the closure and do not reopen for 24 hours
-Support for the new window media management
-Fixed minor bugs
+= 0.7 =
+* Aggiunte le le pagine di tipo lead
+* Aggiunto l'opzione per selezionare i campi da visualizzare nel fomr
+* Aggiunta l'opzione redirect nei form
+* Migliorato il supporto al multiblog
+* I form sono stati ottimizzati per il mobile
+* Corretti bug minori
 
-= 1.9 =
-Fixed a stability issue
+= 0.6 =
+* Velocizzato l'esecuzione del plugin
+* Migliorato il supporto a form multipli all'interno della stessa pagina
+* Sostituito l'uso delle librerie curl con l'istruzione file_get_contents() per migliorare la compatibilita'
+* Aggiunto il pdf della documentazione all'interno del plugin
+* Corretti bug minori
 
-= 1.8 =
-Added the option to open the page in another tab
+= 0.5 =
+* Aggiunto la possibilità di scegliere un foglio di stile diverso per ogni form
+* Aggiunte tutte le funzioni di modifica di un form nel widjet
 
-= 1.7 =
-Adding the dialog box to insert an image directly from the media
-Added the list of pages in the blog to do the redirect
+= 0.4 =
+* Verifica della corretta formattazione della mail nel form e reso campo obbligatorio
+* Riorganizzato il menu delle opzioni
+* Corretti bug minori
 
-= 1.6 =
-The border can be set to 0
+= 0.3 =
+* Aggiunto il widjet
+* Invio di una newsletter ogni volta che viene pubblicato un nuovo post
+* Migliorata la pagina delle impostazioni
 
-= 1.5 =
-Added option to set the line height of the popup
-Replaced the character X to close the popup with an image
+= 0.2 =
+* Gli utenti che si registrano su WP vengono registrati su un circolo di Konora
 
-= 1.4 =
-Fixed a serious problem when the Time of entry field was left blank
-
-= 1.3 =
-Plugin works also on the theme wothout "hide" style
-The height options is been corrected and now works good
-
-= 1.2 = 
-Improved the view of the banner 1000% of the screen width
-
-= 1.1 = 
-Added color management and the level of transparency of the background. 
-Added the choice of the color of the line
-
-= 1.0 =
-Initial revision
-
-== Upgrade Notice ==
-
-There is no news of importance 
+= 0.1 =
+* Aggiunto lo shortcode [konora] per visualizzare un form all'interno di una pagina
