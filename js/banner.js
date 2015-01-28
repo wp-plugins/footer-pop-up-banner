@@ -5,6 +5,8 @@ jQuery(document).ready(function () {
 
     jQuery('.close-overlay').click(function () {
         close_banner();
+
+        SetCookie('wordpress_fpb_close', 1, 1);
     });
 });
 
@@ -20,8 +22,6 @@ function open_banner() {
 
 function close_banner() {
     jQuery('#fpub-popup').hide('slow');
-    
-    SetCookie('wordpress_fpb_close', 1, 1);
 }
 
 function SetCookie(cookieName, cookieValue, nDays) {
@@ -30,7 +30,7 @@ function SetCookie(cookieName, cookieValue, nDays) {
     if (nDays === null || nDays === 0) {
         nDays = 1;
     }
-    
+
     expire.setTime(today.getTime() + 3600000 * 24 * nDays);
     document.cookie = cookieName + "=" + escape(cookieValue)
             + ";expires=" + expire.toGMTString() + ";path=/";
