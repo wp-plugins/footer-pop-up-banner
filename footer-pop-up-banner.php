@@ -4,7 +4,7 @@
   Plugin Name: Footer Pop-up Banner
   Plugin URI: http://www.ninjapress.net/footer-pop-up-banner/
   Description: Publish powerfull ads on the footer of your pages
-  Version: 1.11
+  Version: 1.12
   Author: Ninja Press
   Author URI: http://www.ninjapress.net
   License: GPL2
@@ -58,16 +58,6 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          register_setting('wp_footer_pop_up_banner', 'fpub_blank');
          register_setting('wp_footer_pop_up_banner', 'fpub_24');
          register_setting('wp_footer_pop_up_banner', 'fpub_home');
-
-         /*
-           global $pagenow;
-           if ('media-upload.php' == $pagenow || 'async-upload.php' == $pagenow) {
-           // Now we will replace the 'Insert into Post Button inside Thickbox'
-           //add_filter('gettext', array($this, 'replace_window_text'), 1, 2);
-           // gettext filter and every sentence.
-           }
-          *
-          */
       }
 
       /**

@@ -33,5 +33,5 @@ function SetCookie(cookieName, cookieValue, nDays) {
     
     expire.setTime(today.getTime() + 3600000 * 24 * nDays);
     document.cookie = cookieName + "=" + escape(cookieValue)
-            + ";expires=" + expire.toGMTString();
+            + ";expires=" + expire.toGMTString() + ";path=/";
 }
