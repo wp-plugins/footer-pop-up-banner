@@ -4,7 +4,7 @@
   Plugin Name: Footer Pop-up Banner
   Plugin URI: http://www.ninjapress.net/footer-pop-up-banner/
   Description: Publish powerfull ads on the footer of your pages
-  Version: 1.12.1
+  Version: 1.13
   Author: Ninja Press
   Author URI: http://www.ninjapress.net
   License: GPL2
@@ -22,6 +22,8 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          // register actions
          add_action('admin_menu', array(&$this, 'add_menu'));
          add_action('admin_init', array(&$this, 'admin_init'));
+         add_action('admin_footer', array(&$this, 'live_preview'));
+         add_action('init', array(&$this, 'init'));
       }
 
       /**
@@ -57,6 +59,7 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          register_setting('wp_footer_pop_up_banner', 'fpub_border_height');
          register_setting('wp_footer_pop_up_banner', 'fpub_blank');
          register_setting('wp_footer_pop_up_banner', 'fpub_24');
+         register_setting('wp_footer_pop_up_banner', 'fpub_only_once');
          register_setting('wp_footer_pop_up_banner', 'fpub_home');
       }
 
@@ -67,6 +70,12 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          add_options_page('Footer Pop-Up Banner', 'Footer Pop-Up Banner', 'manage_options', 'wp_footer_pop_up_banner', array(&$this, 'plugin_settings_page'));
       }
 
+      public function init() {
+         if (get_option('fpub_only_once') == 'on') {
+            setcookie("wordpress_fpb_close", 1, time() + 3600 * 24, "/");
+         }
+      }
+
       public function plugin_settings_page() {
          if (!current_user_can('manage_options')) {
             wp_die(__('You do not have sufficient permissions to access this page.'));
@@ -74,8 +83,9 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          wp_enqueue_style('wp-color-picker');
          wp_enqueue_script('uploads');
 
-         wp_enqueue_script('script', plugins_url('js/admin.js', __FILE__), array('jquery', 'jquery-ui-core', 'wp-color-picker'), time(), true); 
-        
+         wp_enqueue_style('banner', plugins_url('css/banner.css', __FILE__));
+         wp_enqueue_script('script', plugins_url('js/admin.js', __FILE__), array('jquery', 'jquery-ui-core', 'wp-color-picker'), time(), true);
+
          if (function_exists('wp_enqueue_media')) {
             // this enqueues all the media upload stuff
             wp_enqueue_media();
@@ -84,7 +94,13 @@ if (!class_exists('WP_Footer_pop_up_banner')) {
          // Render the settings template
          include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
       }
+
+      public function live_preview() {
+         include(sprintf("%s/templates/live_preview.php", dirname(__FILE__)));
+      }
+
    }
+
 }
 
 if (class_exists('WP_Footer_pop_up_banner')) {
@@ -105,13 +121,17 @@ if (class_exists('WP_Footer_pop_up_banner')) {
       }
 
       function show_banner() {
-         if ((is_home() and ( get_option('fpub_home') == 'on')) or ( get_option('fpub_home') != 'on')) {
-            if ((!array_key_exists('wordpress_fpb_close', $_COOKIE) and ( get_option('fpub_24') == 'on')) or ( get_option('fpub_24') != 'on')) {
-               wp_enqueue_script('', plugins_url('js/banner.js', __FILE__), array('jquery', 'jquery-ui-core'), time(), true);
-               wp_enqueue_style('banner', plugins_url('css/banner.css', __FILE__));
+         if (!(array_key_exists('wordpress_fpb_close', $_COOKIE) and ( get_option('fpub_only_once') == 'on'))) {
+            if ((is_home() and ( get_option('fpub_home') == 'on'))
+                    or ( get_option('fpub_home') != 'on')
+            ) {
+               if ((!array_key_exists('wordpress_fpb_close', $_COOKIE) and ( get_option('fpub_24') == 'on')) or ( get_option('fpub_24') != 'on')) {
+                  wp_enqueue_script('', plugins_url('js/banner.js', __FILE__), array('jquery', 'jquery-ui-core'), time(), true);
+                  wp_enqueue_style('banner', plugins_url('css/banner.css', __FILE__));
 
-               // Render the settings template
-               include(sprintf("%s/templates/banner.php", dirname(__FILE__)));
+                  // Render the settings template
+                  include(sprintf("%s/templates/banner.php", dirname(__FILE__)));
+               }
             }
          }
       }
