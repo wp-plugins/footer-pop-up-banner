@@ -4,7 +4,7 @@
   Plugin Name: Footer Pop-up Banner
   Plugin URI: http://www.ninjapress.net/footer-pop-up-banner/
   Description: Publish powerfull ads on the footer of your pages
-  Version: 1.13
+  Version: 1.13.1
   Author: Ninja Press
   Author URI: http://www.ninjapress.net
   License: GPL2
@@ -122,7 +122,7 @@ if (class_exists('WP_Footer_pop_up_banner')) {
 
       function show_banner() {
          if (!(array_key_exists('wordpress_fpb_close', $_COOKIE) and ( get_option('fpub_only_once') == 'on'))) {
-            if ((is_home() and ( get_option('fpub_home') == 'on'))
+            if ((is_front_page() and ( get_option('fpub_home') == 'on'))
                     or ( get_option('fpub_home') != 'on')
             ) {
                if ((!array_key_exists('wordpress_fpb_close', $_COOKIE) and ( get_option('fpub_24') == 'on')) or ( get_option('fpub_24') != 'on')) {
