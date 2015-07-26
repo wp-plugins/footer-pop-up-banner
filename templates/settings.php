@@ -4,11 +4,11 @@
     <div class="postbox">
         <p> 
             &nbsp; Watch other 
-            <a  target="_blank" href="http://www.ninjapress.net/">
+            <a  target="_blank" href="http://goo.gl/T9Dcsp">
                 free plugins
             </a> 
             of our suite. Read the 
-            <a  target="_blank" href="http://www.ninjapress.net/footer-pop-up-banner/faq/">
+            <a  target="_blank" href="http://goo.gl/A3ASRf">
                 F.A.Q.
             </a> 
             for questions.
@@ -19,7 +19,14 @@
         <?php settings_fields('wp_footer_pop_up_banner'); ?>
         <?php @do_settings_fields('wp_footer_pop_up_banner'); ?>
 
-        <table class="form-table">  
+        <table class="form-table">
+           <tr valign="top">
+                <th scope="row"><label for="setting_a">Enable Plugin</label></th>
+                <td>
+                    <input type="checkbox" name="fpub_enable" id="fpub_enable" <?= get_option('fpub_enable', 'on') == 'on' ? 'checked' : ''; ?> />
+                    <label for="fpub_btn_close">Enable displaying the banner</label>
+                </td>
+            </tr>
             <tr valign="top">
                 <th scope="row"><label for="setting_a">Timing</label></th>
                 <td>
@@ -113,7 +120,7 @@
         
     </form>
 
-    <a href="http://www.ninjapress.net/suite/" target="_blank">
+    <a href="http://goo.gl/T9Dcsp" target="_blank">
         <img style="float:right" src="<?= plugins_url('images/ninjapress-logo.png', dirname(__FILE__)); ?>" />
     </a>
 </div>

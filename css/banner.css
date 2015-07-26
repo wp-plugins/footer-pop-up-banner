@@ -4,6 +4,7 @@
     width: 100%;
     z-index: 999999;
     text-align: center;
+    display: none;
 }
 
 .close-overlay {
